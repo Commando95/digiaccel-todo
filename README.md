@@ -1,51 +1,19 @@
-# Daymark — Digiaccel SDE-1 To-Do Assessment
+## Live Demo
 
-A mobile-first MERN task planner for the Digiaccel SDE-1 assignment.
+- **Frontend:** https://delicate-gelato-37325e.netlify.app/
+- **Backend API:** https://digiaccel-todo-api.onrender.com
+- **API Health Check:** https://digiaccel-todo-api.onrender.com/api/health
 
-## Features
-- Responsive mobile-first UI based on the supplied Figma screenshot: blue accent, weekly date strip, task summary tiles, weekly progress, today's tasks and floating add button.
-- Create, edit and delete tasks.
-- Required title and due date/time; optional description and Low/Medium/High priority.
-- In Progress and Completed status toggle.
-- Search by task title or description.
-- Weekly grouping/progress logic based on Monday–Sunday weeks.
-- Express REST API and MongoDB persistence.
+## Tech Stack
 
-## Requirements
-- Node.js 20+ recommended
-- MongoDB running locally (or a MongoDB Atlas connection string)
+- React + Vite
+- Node.js + Express.js
+- MongoDB Atlas
+- REST API
+- Responsive mobile-first UI
 
-## Setup
-1. Extract the archive and open the project directory in a terminal.
-2. Install packages:
-   ```bash
-   npm install
-   npm install --prefix server
-   npm install --prefix client
-   ```
-3. Copy `server/.env.example` to `server/.env` and set `MONGODB_URI`. For local MongoDB:
-   ```dotenv
-   PORT=5000
-   MONGODB_URI=mongodb://127.0.0.1:27017/todoapp
-   ```
-4. Start both apps from the root directory:
-   ```bash
-   npm run dev
-   ```
-5. Open the Vite URL printed in the terminal (normally `http://localhost:5173`). API health check: `http://localhost:5000/api/health`.
+## Local Development
 
-## Tests and production build
-```bash
-npm test
-npm run build
-```
+Follow the setup instructions below to run the application locally. Create your own environment file and configure your MongoDB connection string. Never commit credentials or secrets to GitHub.
 
-## API
-- `GET /api/tasks` — list tasks; accepts optional `?search=` query
-- `POST /api/tasks` — create task
-- `PATCH /api/tasks/:id` — update task
-- `DELETE /api/tasks/:id` — delete task
-- `GET /api/health` — health check
-
-## Submission notes
-Before submitting, run the app locally, verify all task flows, check the Figma reference at mobile size, and commit only source files. Never commit `.env` or database credentials.
+**Note:** The backend is hosted on Render's free tier, so the first request after inactivity may take longer to respond.
