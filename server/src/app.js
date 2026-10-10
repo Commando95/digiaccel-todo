@@ -6,6 +6,7 @@ import taskRoutes from './routes/taskRoutes.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 
 const app = express();
+app.set("trust proxy", 1);
 app.disable('x-powered-by');
 app.use(helmet());
 app.use(cors({ origin: (process.env.CLIENT_ORIGIN || 'http://localhost:5173').split(',').map((origin) => origin.trim()), credentials: false }));
